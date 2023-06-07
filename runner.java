@@ -72,7 +72,7 @@ public class runner{
             System.out.println("\nYou failed! The word was: " + word);
         }
 
-        //seralization...
+        //seralization & exception handling
         Seralize serlize = new Seralize();
         System.out.println("what is your name?");
         input.nextLine();
