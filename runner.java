@@ -12,6 +12,8 @@ public class runner{
         System.out.println("Welcome to Worldle! \\(>.<)/\npress h for help\npress q to quit\npress m for mcdonalds\npress b to play bday song\npress r for restroom\npress p to play");
         Scanner input = new Scanner(System.in);
         String menu = input.nextLine();
+
+        // switch statements 
         switch(menu) {
             case "h":
                 System.out.println("too bad, no help available");
@@ -68,6 +70,23 @@ public class runner{
         }
         else {
             System.out.println("\nYou failed! The word was: " + word);
+        }
+
+        //seralization...
+        Seralize serlize = new Seralize();
+        System.out.println("what is your name?");
+        input.nextLine();
+        try {
+            FileOutputStream fileout = new FileOutputStream("seralize.txt");
+            ObjectOutputStream out = new ObjectOutputStream(fileout);
+            out.writeObject(serlize);
+            out.close();
+            fileout.close();
+            System.out.println("serlization successful and saved in seralize.txt");
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
