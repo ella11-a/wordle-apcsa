@@ -1,18 +1,17 @@
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.Scanner;
+
 public class runner{
     private static final String yellow_background = "\u001B[43m";
     private static final String green_background = "\u001B[42m";
-    private static final String white_background = "\u001B[47m";
+
     private static final String reset_color = "\u001B[0m";
     public static void main(String[] args) {
+
+        Players play = new Players();
+        play.toString();
         System.out.println("Welcome to Worldle! \\(>.<)/\npress h for help\npress q to quit\npress m for mcdonalds\npress b to play bday song\npress r for restroom\npress p to play");
         Scanner input = new Scanner(System.in);
         String menu = input.nextLine();
-
         // switch statements 
         switch(menu) {
             case "h":
@@ -72,21 +71,15 @@ public class runner{
             System.out.println("\nYou failed! The word was: " + green_background + word + reset_color);
         }
 
-        //seralization & exception handling
-        Seralize serlize = new Seralize();
+        //serialization & exception handling
+        Players p = Players.load();
         System.out.println("what is your name?");
-        input.nextLine();
-        try {
-            FileOutputStream fileout = new FileOutputStream("seralize.txt");
-            ObjectOutputStream out = new ObjectOutputStream(fileout);
-            out.writeObject(serlize);
-            out.close();
-            fileout.close();
-            System.out.println("serlization successful and saved in seralize.txt");
-        }
+        String name = input.nextLine();
+        System.out.println("what is your age?");
+        int age = input.nextInt();
+        p.setInfo(name, age);
 
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        
+        
     }
 }
