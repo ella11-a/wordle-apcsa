@@ -69,7 +69,7 @@ public class runner{
             System.out.println("\nYou guessed it! Good job!");
         }
         else {
-            System.out.println("\nYou failed! The word was: " + word);
+            System.out.println("\nYou failed! The word was: " + green_background + word + reset_color);
         }
 
         //seralization & exception handling
