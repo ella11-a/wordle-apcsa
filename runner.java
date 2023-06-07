@@ -34,7 +34,7 @@ public class runner{
                 System.out.println("welcome to Wordle \\(O.^)/");
                 break;
         }
-        String[] words = {"hello", "phone", "mouse", "angry", "camel"};
+        String[] words = WordleWords.getWords();
         String word = words[(int)(Math.random()*words.length)];
         int g = 6;
         String guess = "";
