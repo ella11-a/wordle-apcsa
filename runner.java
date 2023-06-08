@@ -11,8 +11,6 @@ public class runner{
 
         Scanner input = new Scanner(System.in);
 
-        Players play = new Players();
-        play.toString();
         String wordle = reset_color + "W" + green_text + " O " + yellow_text + "R" + reset_color + " D L " + yellow_text + "E" + reset_color;
 
 

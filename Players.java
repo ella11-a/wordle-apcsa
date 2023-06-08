@@ -31,7 +31,7 @@ public class Players implements Serializable {
             out.writeObject(this);
             out.close();
             fileout.close();
-            System.out.println("serialization successful and saved in serialize.txt");
+            System.out.println("serialization successful and saved in players.ser");
         }
 
         catch (IOException e) {
